@@ -15,6 +15,20 @@ Write JavaScript below that logs:
     --> should log a list of nodes with a length of 3
 
 */
+let nodes = Array.from(document.querySelectorAll("p"));
+function logNode (node){
+    console.log(node);
+}
+nodes.forEach(logNode);
+
+logNode(document.querySelector(".site-header"));
+
+logNode(document.querySelector("#jumbotron-text"));
+
+nodes = Array.from(document.querySelectorAll(".primary-content p"));
+
+nodes.forEach(logNode);
+
 
 
 /*
@@ -23,7 +37,11 @@ Task 2
 
 When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
 */
-
+let alertButton = document.querySelector("#alertBtn");
+alertButton.addEventListener("click", alertSomething);
+function alertSomething (button){
+    alert("Thanks for visiting Bikes for Refugees!");
+}
 
 /*
 Task 3
@@ -31,7 +49,12 @@ Task 3
 
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
-
+let changeColor = document.querySelector("#bgrChangeBtn");
+changeColor.addEventListener("click", redColor);
+let bodyChange = document.querySelector("#content");
+function redColor (color){
+    bodyChange.style.backgroundColor = "red";
+}
 
 /*
 Task 4
@@ -39,9 +62,17 @@ Task 4
 
 When a user clicks the 'Add some text' button, a new paragraph should be added below the buttons that says "Read more below."
 */
+let addTextBtn = document.querySelector("#addTextBtn");
+addTextBtn.addEventListener("click", addText);
 
-
-
+function addText (){
+    let paragraph = document.createElement("p");
+    paragraph.innerText = "Read more below";
+    let ap = querySelector(".jumbotron");
+    ap.appendChild(paragraph);
+    //console.log(ap)
+};
+//console.log(addText(addTextbtn))
 /*
 Task 5
 ======
