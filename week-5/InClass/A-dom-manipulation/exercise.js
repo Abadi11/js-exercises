@@ -64,12 +64,11 @@ When a user clicks the 'Add some text' button, a new paragraph should be added b
 */
 let addTextBtn = document.querySelector("#addTextBtn");
 addTextBtn.addEventListener("click", addText);
-
+let paragraph = document.createElement("p");
+let ap = querySelector(".jumbotron");
+ap.appendChild(paragraph);
 function addText (){
-    let paragraph = document.createElement("p");
     paragraph.innerText = "Read more below";
-    let ap = querySelector(".jumbotron");
-    ap.appendChild(paragraph);
     //console.log(ap)
 };
 //console.log(addText(addTextbtn))
